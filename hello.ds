@@ -1,0 +1,6 @@
+DEF countdown(n)
+    if n = 0 THEN return 0
+    RETURN countdown(n-1)
+DEND
+
+countdown(100000)

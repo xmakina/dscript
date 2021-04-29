@@ -1,0 +1,10 @@
+DEF fib(n)
+    IF n < 2 THEN RETURN n
+    RETURN fib(n-1) + fib(n-2)
+DEND
+
+LET before = CLOCK()
+PRINT fib(20)
+LET after = CLOCK()
+
+PRINT after - before

@@ -1,0 +1,22 @@
+DEF GetInput()
+    LET START = -1
+    INPUT START "How many bottles?"
+    RETURN START
+DEND
+
+LET START = GetInput()
+IF IS_NUMBER(START) = FALSE THEN SET START = -1
+
+WHILE START < 1
+    PRINT "That's not right!"
+    SET START = GetInput()
+    IF IS_NUMBER(START) = FALSE THEN SET START = -1
+WEND
+
+FOR BOTTLES = START TO 0 STEP -1
+    LET BOTTLE_WORD = "bottles"
+    IF BOTTLES = 1 THEN SET BOTTLE_WORD = "bottle"
+    PRINT BOTTLES + " " + BOTTLE_WORD + " of beer on the wall, " + BOTTLES + " " + BOTTLE_WORD + " of beer."
+NEXT BOTTLES
+PRINT "No more bottles of beer on the wall, no more bottles of beer."
+PRINT "Go to the store and buy some more, 99 bottles of beer on the wall."
